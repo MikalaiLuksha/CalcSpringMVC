@@ -2,13 +2,14 @@ package tms.service;
 
 
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import tms.entity.Operation;
 
 
 import java.util.List;
 
 
-
+@Service
 public class CalcService {
 
     public CalcService(List<Operation> operations) {

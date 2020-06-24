@@ -1,6 +1,7 @@
 package tms;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
+import tms.config.Config;
 
 public class WebAppInit extends AbstractAnnotationConfigDispatcherServletInitializer {
     @Override
