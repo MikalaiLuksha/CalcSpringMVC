@@ -14,6 +14,7 @@ public class LogoutController {
     @GetMapping
     public String logout (HttpSession httpSession){
         httpSession.removeAttribute("currentUser");
+        httpSession.setAttribute("check", false);
         return "index";
     }
 }
