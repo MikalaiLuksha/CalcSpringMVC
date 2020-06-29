@@ -14,6 +14,7 @@
 <c:if test="${check}">
 <p><a href="/calc">Calculation</a></p>
 <p><a href="/history">History</a></p>
+<p><a href="/logout">Logout</a></p>
 </c:if>
 
 ${message}

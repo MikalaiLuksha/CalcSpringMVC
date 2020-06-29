@@ -21,13 +21,6 @@ public class Config {
         return internalResourceViewResolver;
     }
 
-        @Bean
-        List <Operation> operations (){
-            return new ArrayList<>();
-        }
-
-
-
     }
 
 

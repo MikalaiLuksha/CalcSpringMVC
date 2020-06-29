@@ -5,8 +5,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import tms.entity.Operation;
 import tms.service.CalcService;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
@@ -20,9 +22,9 @@ public class HistoryController {
     }
 
     @GetMapping
-    public String history(Model model){
-        List history = calcService.getHistory();
-        model.addAttribute("history", history);
+    public String history(Model model, HttpSession httpSession){
+        List <Operation> history = (List) httpSession.getAttribute("history");
+         model.addAttribute("history", history);
                 return "history";
     }
 }

@@ -6,20 +6,14 @@ import org.springframework.stereotype.Service;
 import tms.entity.Operation;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 
 @Service
 public class CalcService {
 
-    public CalcService(List<Operation> operations) {
-        this.operations = operations;
-    }
-
-    private List<Operation> operations;
-
-
-    public double calculation(String operation, double num1, double num2) {
+     public double calculation(String operation, double num1, double num2) {
         double num3;
         switch (operation) {
             case ("plus"):
@@ -37,16 +31,10 @@ public class CalcService {
             default:
                 throw new IllegalStateException("Unexpected value: " + operation);
         }
-        addHistory(num1, num2, num3, operation);
         return num3;
     }
-    private void addHistory(double num1, double num2, double res, String operation) {
-        String symbol = symbol(operation);
-        Operation operation1 = new Operation(num1, num2, res, symbol);
-        operations.add(operation1);
-    }
 
-    private String symbol (String operation) {
+    public String symbol (String operation) {
 
         switch (operation) {
             case ("plus"):
@@ -61,9 +49,4 @@ public class CalcService {
                 throw new IllegalStateException("Unexpected value: " + operation);
         }
     }
-
-    public List getHistory() {
-        return operations;
-    }
-
 }
